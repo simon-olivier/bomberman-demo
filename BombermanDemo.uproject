@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{FD8534C2-49CE-7FDA-D43B-98864D18DDB5}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "BombermanDemo",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
