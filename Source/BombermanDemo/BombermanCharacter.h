@@ -14,4 +14,5 @@ class BOMBERMANDEMO_API ABombermanCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ABombermanCharacter();
+	void ApplyDirectionInputs(const FVector2D DirectionInputs);
 };
