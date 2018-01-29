@@ -15,4 +15,14 @@ public:
 	// Sets default values for this character's properties
 	ABombermanCharacter();
 	void ApplyDirectionInputs(const FVector2D DirectionInputs);
+	void SpawnBomb();
+
+	UPROPERTY(EditDefaultsOnly, Category=Bomb)
+	TSubclassOf<class ABomb> BombType;
+
+	UPROPERTY(EditDefaultsOnly, Category=Bomb)
+	FName BombCollisionProfileName;
+
+private:
+	FVector CalculateDesiredBombLocation() const;
 };
