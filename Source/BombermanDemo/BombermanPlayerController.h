@@ -22,8 +22,10 @@ protected:
 	virtual void SetupInputComponent() override;
 	void ListenMoveForward(float AxisInput);
 	void ListenMoveRight(float AxisInput);
+	void ListenDisposeBomb();
 
 private:
 	FVector2D DirectionInputs;
+	bool bDisposeBombPressed;
 	
 };

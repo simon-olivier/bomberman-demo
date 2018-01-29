@@ -19,6 +19,11 @@ void ABombermanPlayerController::Tick(float DeltaTime)
 		{
 			Character->ApplyDirectionInputs(DirectionInputs);
 		}
+		if (bDisposeBombPressed)
+		{
+			Character->SpawnBomb();
+			bDisposeBombPressed = false;
+		}
 	}
 }
 
@@ -30,6 +35,9 @@ void ABombermanPlayerController::SetupInputComponent()
 		&ABombermanPlayerController::ListenMoveForward);
 	InputComponent->BindAxis("MoveRight", this,
 		&ABombermanPlayerController::ListenMoveRight);
+
+	InputComponent->BindAction("DisposeBomb", IE_Pressed, this,
+		&ABombermanPlayerController::ListenDisposeBomb);
 }
 
 void ABombermanPlayerController::ListenMoveForward(float AxisInput)
@@ -42,3 +50,7 @@ void ABombermanPlayerController::ListenMoveRight(float AxisInput)
 	DirectionInputs.Y = FMath::Clamp(AxisInput, -1.0f, 1.0f);
 }
 
+void ABombermanPlayerController::ListenDisposeBomb()
+{
+	bDisposeBombPressed = true;
+}
